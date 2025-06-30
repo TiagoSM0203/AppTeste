@@ -1,15 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste juncao de pedidos</title>
+    <title>Sistema de Pedidos e Itinerário</title>
 </head>
 <body>
-    <h1>Juntar pedidos</h1>
+    <h1>Sistema de Pedidos e Itinerário</h1>
+    
+    <!-- Seção de Cadastro de Pedidos -->
+    <section id="cadastro-section">
+        <h2>Cadastro de Pedidos</h2>
+        
+        <form id="pedido-form">
+            <div>
+                <label for="codigo-cliente">Código do Pedido e Cliente:</label>
+                <input type="text" id="codigo-cliente" placeholder="123 - Maria Lima" required>
+            </div>
+            
+            <div id="produtos-container">
+                <h3>Produtos do Pedido:</h3>
+                <div class="produto-item">
+                    <label>Produto:</label>
+                    <input type="text" class="produto-nome" placeholder="5L Detergente Limão" required>
+                    <label>Quantidade:</label>
+                    <input type="number" class="produto-quantidade" placeholder="10" min="1" required>
+                </div>
+            </div>
+            
+            <button type="button" id="adicionar-produto">Adicionar Produto</button>
+            <button type="submit">Salvar Pedido</button>
+        </form>
+    </section>
 
-    <form action="">
-        <label for="pedido">Cliente</label>
-    </form>
+    <hr>
+
+    <!-- Seção de Lista de Pedidos -->
+    <section id="lista-section">
+        <h2>Pedidos Cadastrados</h2>
+        <div id="lista-pedidos"></div>
+    </section>
+
+    <hr>
+
+    <!-- Seção de Geração de Itinerário -->
+    <section id="itinerario-section">
+        <h2>Gerar Itinerário de Expedição</h2>
+        
+        <div>
+            <h3>Selecionar Pedidos:</h3>
+            <div id="selecao-pedidos"></div>
+            <button id="gerar-itinerario">Gerar Itinerário</button>
+        </div>
+        
+        <div id="resultado-itinerario"></div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
